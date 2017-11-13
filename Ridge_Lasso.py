@@ -22,7 +22,8 @@ Lasso Regression:
     of the magnitude of coefficients. 
 
 
-# WHY PENALIZE THE MAGNITUDE OF COEFFICIENTS ? vv
+# WHY PENALIZE THE MAGNITUDE OF COEFFICIENTS ?  
+
 """
 import numpy as np
 import pandas as pd
@@ -32,7 +33,7 @@ from matplotlib.pylab import rcParams
 
 rcParams['figure.figsize']= 12, 10
         
-    # Define input array with arngles 60 - 300 in radians
+    # Define input array with angles 60 - 300 in radians
     
 x = np.array([i*np.pi/180 for i in range(60,300,4)])
 np.random.seed(10) # for reproducability.
