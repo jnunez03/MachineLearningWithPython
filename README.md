@@ -1,4 +1,5 @@
 # Machine Learning With Python
+Sklearn, numpy, pandas, ETC!
 - Linear Regression
 - Logistic Regression
 - Lasso Regression
