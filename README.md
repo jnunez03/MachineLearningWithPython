@@ -5,4 +5,15 @@ Sklearn, numpy, pandas, ETC!
 - Lasso Regression
 - Ridge Regression 
 - Gradient Descent
-# Much more to come
+- Support Vector Machine (SOON)
+- Random Forest (SOON)
+- KNN (SOON)
+- K-Means (SOON)
+- Naive Bayes (SOON)
+- Decision Trees (SOON)
+- Dimensionality Reduction (SOON)
+- Gradient Boosted Algorithms (SOON) 
+- Neural Networks (SOON)
+
+
+# Enjoy!
