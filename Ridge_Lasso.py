@@ -104,15 +104,15 @@ col = ['rss','intercept'] + ['coef_x%d'%i for i in range(1,16)]
 
 ind = ['model_pow_%d'%i for i in range(1,16)]
 
-#coef_matrix_simple = pd.DataFrame(index=ind, columns=col)
+coef_matrix_simple = pd.DataFrame(index=ind, columns=col)
 
 #Define powers for which a plot is required.
 
-#models_to_plot = {1:231, 3:232, 6:233, 9:234, 12:235, 15:236}
+models_to_plot = {1:231, 3:232, 6:233, 9:234, 12:235, 15:236}
 
 # Iterate through all powers and assimilate results
-#for i in range(1,16):
-#    coef_matrix_simple.iloc[i-1,0:i+2] = linear_regression(data,power=i,models_to_plot=models_to_plot)
+for i in range(1,16):
+    coef_matrix_simple.iloc[i-1,0:i+2] = linear_regression(data,power=i,models_to_plot=models_to_plot)
 
 
 
@@ -123,8 +123,8 @@ ind = ['model_pow_%d'%i for i in range(1,16)]
 
 # Set display format to be scientific
 
-#pd.options.display.float_format = '{:,.2g}'.format
-# print(coef_matrix_simple)
+pd.options.display.float_format = '{:,.2g}'.format
+print(coef_matrix_simple)
 
 """ 
 We see that the size of the coefficients increase exponentially with
