@@ -173,21 +173,21 @@ the value of alpha would differ. Different from linear regression, which would h
 a subset of features.. """
 
 # initialize predictors to be set of 15 powers of x.
-#predictors = ['x']
-#predictors.extend(['x_%d'%i for i in range(2,16)])
+predictors = ['x']
+predictors.extend(['x_%d'%i for i in range(2,16)])
 
 #Set different values of alpha to be tested.
 alpha_ridge = [1e-15, 1e-10, 1e-8, 1e-4, 1e-3, 1e-2, 1, 5, 10, 20]
 
 #Make data frame to store coefficients.
 
-#col = ['rss','intercept'] + ['coef_x_%d'%i for i in range(1,16)]
-#ind = ['alpha_%.2g'%alpha_ridge[i] for i in range(0,10)]
-#coef_matrix_ridge = pd.DataFrame(index=ind, columns=col)
+col = ['rss','intercept'] + ['coef_x_%d'%i for i in range(1,16)]
+ind = ['alpha_%.2g'%alpha_ridge[i] for i in range(0,10)]
+coef_matrix_ridge = pd.DataFrame(index=ind, columns=col)
 
 #models_to_plot = {1e-15:231, 1e-10:232, 1e-4:233, 1e-3:234, 1e-2:235, 5:236}
-#for i in range(10):
-#    coef_matrix_ridge.iloc[i,] = ridge_regression(data, predictors, alpha_ridge[i],models_to_plot) 
+for i in range(10):
+    coef_matrix_ridge.iloc[i,] = ridge_regression(data, predictors, alpha_ridge[i],models_to_plot) 
 
 """
 
@@ -199,8 +199,8 @@ of alpha reduce overfitting (ex: alpha=5).
 """
 # Set display format to table for values of alpha-coeff to be seen.
 
-#pd.options.display.float_format = '{:,.2g}'.format
-#print(coef_matrix_ridge)
+pd.options.display.float_format = '{:,.2g}'.format
+print(coef_matrix_ridge)
 
 """ We can see the following:
     1. The RSS increases with increase in alpha, the model complexity dec.
@@ -210,7 +210,7 @@ of alpha reduce overfitting (ex: alpha=5).
     4. coefficient are NOT ZERO!! 
     
     lets confirm that.. """
-#coef_matrix_ridge.apply(lambda x: sum(x.values==0), axis=1)
+coef_matrix_ridge.apply(lambda x: sum(x.values==0), axis=1)
     
     # shows that all 15 coefficients are greater than zero.
     
@@ -255,17 +255,17 @@ predictors.extend(['x_%d'%i for i in range(2,16)])
 alpha_lasso=[1e-15,1e-10,1e-8,1e-5,1e-4,1e-3,1e-2,1,5,10]
 
 #Initialize dataframe to store coefficients. 
-col = ['rss','intercept'] + ['coef_x_%d'%i for i in range(1,16)]
-ind = ['alpha_%.2g'%alpha_lasso[i] for i in range(0,10)]
-coef_matrix_lasso = pd.DataFrame(index=ind, columns=col)
+col1 = ['rss','intercept'] + ['coef_x_%d'%i for i in range(1,16)]
+ind1 = ['alpha_%.2g'%alpha_lasso[i] for i in range(0,10)]
+coef_matrix_lasso = pd.DataFrame(index=ind1, columns=col1)
 
 # Define models to plot
-models_to_plot = {1e-10:231, 1e-5:232, 1e-4:233, 1e-3:234, 1e-2:235, 1:236}
+models_to_plot1 = {1e-10:231, 1e-5:232, 1e-4:233, 1e-3:234, 1e-2:235, 1:236}
 
 #iterate over the 10 alpha values
 
 for i in range(10):
-    coef_matrix_lasso.iloc[i,] = lasso_regression(data,predictors,alpha_lasso[i],models_to_plot)
+    coef_matrix_lasso.iloc[i,] = lasso_regression(data,predictors,alpha_lasso[i],models_to_plot1)
     
 
     
